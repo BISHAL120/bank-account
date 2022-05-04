@@ -34,7 +34,7 @@
 
 
     <script>
-
+        // withdraw--------------------------------withdraw-----------------------withdraw-------------
         document.getElementById('withdraw-btn').addEventListener('click', function () {
             const withdrawAmount = document.getElementById('withdraw-output');
             const withdrawAmountvalue = withdrawAmount.value;
@@ -43,9 +43,20 @@
             const totalwithdrawbalance = parseFloat(withdrawbalancetext) - parseFloat(withdrawAmountvalue);
             withdrawbalance.innerText = totalwithdrawbalance;
             const withdraw = document.getElementById('withdraw');
-            withdraw.innerHTML = withdrawAmountvalue;
+            const withdrawtext = withdraw.innerText;
+            newwithdraw = parseFloat(withdrawtext) + parseFloat(withdrawAmountvalue);
+            withdraw.innerText = newwithdraw;
+
+            withdrawAmount.value = "";
+
 
         })
+        //withdraw-----------------withdraw---------------------------withdraw----------------withdraw---------------
+
+
+
+        // Deposit-------------Deposit--------------Deposit----------------Deposit-----------------Deposit----------------
+
 
         document.getElementById('deposit-btn').addEventListener('click', function () {
             const DepositAmount = document.getElementById('deposit-input');
@@ -58,8 +69,14 @@
             const balancetext = balance.innerText;
             const newbalance = parseFloat(balancetext) + parseFloat(DepositAmountvalue);
             balance.innerText = newbalance;
+            DepositAmount.value = "";
         })
 
+
+
+
+
+//Deposit-----------------Deposit------------------Deposit---------------Deposit----------------Deposit------------------
     </script>
 </body>
 
