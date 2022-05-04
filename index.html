@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bank-Account</title>
+</head>
+
+<body>
+    <section class="main">
+        <div class="box">
+            <div class="box-style">
+                <h3>Deposit</h3>
+                <p>$ <span id="deposit-balance">00</span></p>
+                <input id="deposit-input" type="text" placeholder="$ Amount you want to Deposit!">
+                <button id="deposit-btn">Deposit</button>
+            </div>
+            <div class="box-style">
+                <h3>Withdraw</h3>
+                <p>$ <span id="withdraw">00</span></p>
+                <input id="withdraw-output" type="text" placeholder="$ Amount you want to Deposit!">
+                <button id="withdraw-btn">Withdraw</button>
+            </div>
+            <div class="box-style">
+                <h3>Balance</h3>
+                <p>$ <span id="balance">100</span></p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script>
+
+        document.getElementById('withdraw-btn').addEventListener('click', function () {
+            const withdrawAmount = document.getElementById('withdraw-output');
+            const withdrawAmountvalue = withdrawAmount.value;
+            const withdrawbalance = document.getElementById('balance');
+            const withdrawbalancetext = withdrawbalance.innerText;
+            const totalwithdrawbalance = parseFloat(withdrawbalancetext) - parseFloat(withdrawAmountvalue);
+            withdrawbalance.innerText = totalwithdrawbalance;
+            const withdraw = document.getElementById('withdraw');
+            withdraw.innerHTML = withdrawAmountvalue;
+
+        })
+
+        document.getElementById('deposit-btn').addEventListener('click', function () {
+            const DepositAmount = document.getElementById('deposit-input');
+            const DepositAmountvalue = DepositAmount.value;
+            const depositbalance = document.getElementById('deposit-balance');
+            const depositbalancetext = depositbalance.innerText;
+            const totaldepositbalance = parseFloat(DepositAmountvalue) + parseFloat(depositbalancetext);
+            depositbalance.innerText = totaldepositbalance;
+            const balance = document.getElementById('balance');
+            const balancetext = balance.innerText;
+            const newbalance = parseFloat(balancetext) + parseFloat(DepositAmountvalue);
+            balance.innerText = newbalance;
+        })
+
+    </script>
+</body>
+
+</html>
